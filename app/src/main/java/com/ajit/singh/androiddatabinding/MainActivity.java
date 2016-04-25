@@ -1,31 +1,29 @@
 package com.ajit.singh.androiddatabinding;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 
-import com.ajit.singh.androiddatabinding.databinding.ActivityMainBinding;
+import com.ajit.singh.androiddatabinding.databinding.MainActivityBinding;
+import com.ajit.singh.androiddatabinding.login.LoginActivity;
 
-public class MainActivity extends AppCompatActivity implements LoginView {
-
+public class MainActivity extends AppCompatActivity implements MainView {
   @Override
-  protected void onCreate(Bundle savedInstanceState) {
+  protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-
-    LoginViewModel loginViewModel = new LoginViewModel();
-    binding.setLoginViewModel(loginViewModel);
-    binding.setHandler(new LoginHandler(loginViewModel, this));
+    MainActivityBinding binding = DataBindingUtil.setContentView(this, R.layout.main_activity);
+    binding.setHandler(new MainHandler(this));
   }
 
   @Override
-  public void onSuccess() {
-    Toast.makeText(this, "Login Successful !!", Toast.LENGTH_SHORT).show();
+  public void renderLoginForm() {
+    startActivity(new Intent(this, LoginActivity.class));
   }
 
   @Override
-  public void onFailure() {
-    Toast.makeText(this, "Login Failed !!", Toast.LENGTH_SHORT).show();
+  public void renderAdapterView() {
+
   }
 }

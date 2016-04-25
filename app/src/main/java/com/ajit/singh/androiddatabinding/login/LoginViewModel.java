@@ -1,4 +1,4 @@
-package com.ajit.singh.androiddatabinding;
+package com.ajit.singh.androiddatabinding.login;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;

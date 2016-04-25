@@ -1,4 +1,4 @@
-package com.ajit.singh.androiddatabinding;
+package com.ajit.singh.androiddatabinding.login;
 
 public interface LoginView {
   void onSuccess();

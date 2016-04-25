@@ -6,10 +6,10 @@
   <data>
     <variable
       name="loginViewModel"
-      type="com.ajit.singh.androiddatabinding.LoginViewModel"/>
+      type="com.ajit.singh.androiddatabinding.login.LoginViewModel"/>
     <variable
       name="handler"
-      type="com.ajit.singh.androiddatabinding.LoginHandler"/>
+      type="com.ajit.singh.androiddatabinding.login.LoginHandler"/>
   </data>
 
   <LinearLayout
@@ -20,7 +20,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.ajit.singh.androiddatabinding.MainActivity">
+    tools:context=".login.LoginActivity">
 
     <LinearLayout
       android:layout_width="match_parent"
@@ -44,7 +44,7 @@
         android:layout_marginTop="20dp"
         android:text="@{loginViewModel.password}"
         android:gravity="center_horizontal"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:addTextChangedListener="@{loginViewModel.passwordWatcher}"
         android:hint="Password"/>
 

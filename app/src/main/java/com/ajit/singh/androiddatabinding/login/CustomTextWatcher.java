@@ -1,4 +1,4 @@
-package com.ajit.singh.androiddatabinding;
+package com.ajit.singh.androiddatabinding.login;
 
 import android.text.Editable;
 import android.text.TextWatcher;
