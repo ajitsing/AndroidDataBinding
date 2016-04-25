@@ -13,12 +13,12 @@ import com.ajit.singh.androiddatabinding.databinding.ContactBinding;
 import java.util.List;
 
 public class ContactsAdapter extends BaseAdapter {
-  private Context ctx;
   private List<ContactViewModel> contactViewModels;
+  private LayoutInflater inflator;
 
   public ContactsAdapter(Context ctx, List<ContactViewModel> contactViewModels) {
-    this.ctx = ctx;
     this.contactViewModels = contactViewModels;
+    inflator = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
   }
 
   @Override
@@ -38,7 +38,6 @@ public class ContactsAdapter extends BaseAdapter {
 
   @Override
   public View getView(int position, View view, ViewGroup viewGroup) {
-    LayoutInflater inflator = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     ContactBinding binding = DataBindingUtil.inflate(inflator, R.layout.contact, viewGroup, false);
     binding.setContact(contactViewModels.get(position));
     return binding.getRoot();
