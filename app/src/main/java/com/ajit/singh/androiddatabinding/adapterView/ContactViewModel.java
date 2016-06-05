@@ -3,6 +3,8 @@ package com.ajit.singh.androiddatabinding.adapterView;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
+import com.ajit.singh.androiddatabinding.BR;
+
 public class ContactViewModel extends BaseObservable {
   private String name;
   private String number;

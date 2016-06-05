@@ -38,7 +38,13 @@ public class ContactsAdapter extends BaseAdapter {
 
   @Override
   public View getView(int position, View view, ViewGroup viewGroup) {
-    ContactBinding binding = DataBindingUtil.inflate(inflator, R.layout.contact, viewGroup, false);
+    ContactBinding binding;
+    if (view != null) {
+      binding = DataBindingUtil.getBinding(view);
+    } else {
+      binding = DataBindingUtil.inflate(inflator, R.layout.contact, viewGroup, false);
+    }
+
     binding.setContact(contactViewModels.get(position));
     return binding.getRoot();
   }

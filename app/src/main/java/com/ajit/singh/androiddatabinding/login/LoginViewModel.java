@@ -4,6 +4,8 @@ import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import android.text.TextWatcher;
 
+import com.ajit.singh.androiddatabinding.BR;
+
 public class LoginViewModel extends BaseObservable {
   private String username;
   private String password;
@@ -34,11 +36,11 @@ public class LoginViewModel extends BaseObservable {
 
   public void setUsername(String username) {
     this.username = username;
-    notifyPropertyChanged(com.ajit.singh.androiddatabinding.BR.username);
+    notifyPropertyChanged(BR.username);
   }
 
   public void setPassword(String password) {
     this.password = password;
-    notifyPropertyChanged(com.ajit.singh.androiddatabinding.BR.password);
+    notifyPropertyChanged(BR.password);
   }
 }
