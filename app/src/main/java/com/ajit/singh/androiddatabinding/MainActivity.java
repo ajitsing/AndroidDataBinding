@@ -10,7 +10,7 @@ import com.ajit.singh.androiddatabinding.adapterView.AdapterViewActivity;
 import com.ajit.singh.androiddatabinding.databinding.MainActivityBinding;
 import com.ajit.singh.androiddatabinding.login.LoginActivity;
 
-public class MainActivity extends AppCompatActivity implements MainView {
+public class MainActivity extends AppCompatActivity implements MainNavigator {
   @Override
   protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);

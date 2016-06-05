@@ -4,17 +4,17 @@ import android.view.View;
 
 public class MainHandler {
 
-  private MainView view;
+  private MainNavigator navigator;
 
-  public MainHandler(MainView view) {
-    this.view = view;
+  public MainHandler(MainNavigator navigator) {
+    this.navigator = navigator;
   }
 
   public void startLoginFlow(View view) {
-    this.view.renderLoginForm();
+    this.navigator.renderLoginForm();
   }
 
   public void startAdapterViewFlow(View view) {
-    this.view.renderAdapterView();
+    this.navigator.renderAdapterView();
   }
 }

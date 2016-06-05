@@ -2,27 +2,13 @@ package com.ajit.singh.androiddatabinding.login;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
-import android.text.TextWatcher;
 
 import com.ajit.singh.androiddatabinding.BR;
 
 public class LoginViewModel extends BaseObservable {
   private String username;
   private String password;
-
-  public final TextWatcher usernameWatcher = new CustomTextWatcher() {
-    @Override
-    public void onTextChanged(String text) {
-      setUsername(text);
-    }
-  };
-
-  public final TextWatcher passwordWatcher = new CustomTextWatcher() {
-    @Override
-    public void onTextChanged(String text) {
-      setPassword(text);
-    }
-  };
+  private String loginMessage;
 
   @Bindable
   public String getUsername() {
@@ -34,6 +20,11 @@ public class LoginViewModel extends BaseObservable {
     return password;
   }
 
+  @Bindable
+  public String getLoginMessage() {
+    return loginMessage;
+  }
+
   public void setUsername(String username) {
     this.username = username;
     notifyPropertyChanged(BR.username);
@@ -42,5 +33,15 @@ public class LoginViewModel extends BaseObservable {
   public void setPassword(String password) {
     this.password = password;
     notifyPropertyChanged(BR.password);
+  }
+
+  public void loginSucceeded() {
+    loginMessage = "Login Successful!!";
+    notifyPropertyChanged(BR.loginMessage);
+  }
+
+  public void loginFailed() {
+    loginMessage = "Login Failed!!";
+    notifyPropertyChanged(BR.loginMessage);
   }
 }

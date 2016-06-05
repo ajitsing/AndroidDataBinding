@@ -1,6 +1,6 @@
 package com.ajit.singh.androiddatabinding;
 
-public interface MainView {
+public interface MainNavigator {
   void renderLoginForm();
 
   void renderAdapterView();

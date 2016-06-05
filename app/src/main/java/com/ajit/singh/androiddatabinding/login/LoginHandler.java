@@ -1,21 +1,39 @@
 package com.ajit.singh.androiddatabinding.login;
 
+import android.text.TextWatcher;
 import android.view.View;
 
 public class LoginHandler {
-  private LoginViewModel loginViewModel;
-  private LoginView view;
+  private LoginPresenter presenter;
 
-  public LoginHandler(LoginViewModel loginViewModel, LoginView view) {
-    this.loginViewModel = loginViewModel;
-    this.view = view;
+  public LoginHandler(LoginPresenter presenter) {
+    this.presenter = presenter;
   }
 
-  public void onLogin(View v) {
-    if(loginViewModel.getUsername().equals("ajit") && loginViewModel.getPassword().equals("singh")){
-      view.onSuccess();
-    } else {
-      view.onFailure();
-    }
+  public TextWatcher userNameChanged(final LoginViewModel viewModel) {
+    return new CustomTextWatcher() {
+      @Override
+      public void onTextChanged(String text) {
+        presenter.usernameChanged(viewModel, text);
+      }
+    };
+  }
+
+  public TextWatcher passwordChanged(final LoginViewModel viewModel) {
+    return new CustomTextWatcher() {
+      @Override
+      public void onTextChanged(String text) {
+        presenter.passwordChanged(viewModel, text);
+      }
+    };
+  }
+
+  public View.OnClickListener onLogin(final LoginViewModel viewModel) {
+    return new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        presenter.login(viewModel);
+      }
+    };
   }
 }
