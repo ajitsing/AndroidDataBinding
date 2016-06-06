@@ -34,20 +34,18 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@{loginViewModel.username}"
+        android:text="@={loginViewModel.username}"
         android:gravity="center_horizontal"
         android:inputType="text"
-        android:addTextChangedListener="@{handler.userNameChanged(loginViewModel)}"
         android:hint="Username"/>
 
       <EditText
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@{loginViewModel.password}"
+        android:text="@={loginViewModel.password}"
         android:gravity="center_horizontal"
         android:inputType="textPassword"
-        android:addTextChangedListener="@{handler.passwordChanged(loginViewModel)}"
         android:hint="Password"/>
 
       <Button

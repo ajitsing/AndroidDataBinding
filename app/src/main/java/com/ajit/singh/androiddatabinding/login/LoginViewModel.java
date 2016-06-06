@@ -27,12 +27,10 @@ public class LoginViewModel extends BaseObservable {
 
   public void setUsername(String username) {
     this.username = username;
-    notifyPropertyChanged(BR.username);
   }
 
   public void setPassword(String password) {
     this.password = password;
-    notifyPropertyChanged(BR.password);
   }
 
   public void loginSucceeded() {

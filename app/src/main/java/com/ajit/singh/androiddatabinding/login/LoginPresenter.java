@@ -9,12 +9,4 @@ public class LoginPresenter {
       viewModel.loginFailed();
     }
   }
-
-  public void passwordChanged(LoginViewModel viewModel, String password) {
-    viewModel.setPassword(password);
-  }
-
-  public void usernameChanged(LoginViewModel viewModel, String username) {
-    viewModel.setUsername(username);
-  }
 }
