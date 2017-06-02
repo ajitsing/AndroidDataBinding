@@ -1,4 +1,7 @@
 # AndroidDataBinding
+
+[![Twitter](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/Ajit5ingh)
+
 Simple App To Understand Android Data Binding
 
 ## Video: Presentation on android data binding
